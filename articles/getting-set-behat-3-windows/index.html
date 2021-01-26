@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://www.codepositive.com/articles/getting-set-behat-3-windows" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.codepositive.com/articles/getting-set-behat-3-windows" />
+
+    <title>Getting set up with Behat 3 on Windows | Code Positive Services</title>
+    <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/foundation-float.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/motion-ui.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/zurb_foundation.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/custom/zurb_child/css/zurb_child.css?qng7h5" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  </head>
+  <body class="lang-en section-articles path-node node--type-page">
+  <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div class="off-canvas-wrapper">
+  <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
+    <aside id="left-off-canvas-menu" class="off-canvas left-off-canvas-menu position-left" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <aside id="right-off-canvas-menu" class="off-canvas right-off-canvas-menu position-right" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <div class="off-canvas-content expanded" data-off-canvas-content>
+      
+      <header class="row collapse expanded" role="banner" aria-label="Site header">
+                  <div class="large-12 columns expanded">
+              <div>
+    <nav role="navigation" aria-labelledby="block-zurb-child-main-menu--2-menu" id="block-zurb-child-main-menu--2" class="block-zurb-child-main-menu--2">
+            
+  <h2 class="block-title visually-hidden" id="block-zurb-child-main-menu--2-menu">Main navigation</h2>
+  
+
+        
+
+    <div id="top-bar-sticky-container" data-sticky-container>
+      <div  class="sticky large-12" data-sticky data-top-anchor="top-bar-sticky-container" data-btm-anchor="9999999" data-margin-top="0" data-margin-bottom="0" data-options="stickyOn:small">
+      <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title"></div>
+      </div>
+      <nav class="top-bar" id="main-menu" role="navigation">
+        <div class="top-bar-left">
+          <a href="/">
+            <img src="/themes/custom/zurb_child/images/misc/logo.png" >
+          </a>
+
+        </div>
+        <div class="top-bar-right">
+                                <ul class="menu vertical medium-horizontal" data-disable-hover="true" data-responsive-menu="drilldown medium-dropdown">
+                                        <li>
+        <a href="/services/drupal-consulting" title="Drupal Consulting" data-drupal-link-system-path="node/7">Consulting</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-development" title="Drupal Development" data-drupal-link-system-path="node/8">Development</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-support" title="Drupal support &amp; maintenance" data-drupal-link-system-path="node/9">Support</a>
+              </li>
+                              <li>
+        <a href="/contact" title="Contact Code Positive Services" data-drupal-link-system-path="node/11">Talk To Us</a>
+              </li>
+        </ul>
+  
+                            </div>
+      </nav>
+    </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          </div>
+              </header>
+
+      <div class="row expanded">
+                              </div>
+
+      
+      
+      <div class="row collapse expanded">
+        <main id="main" class="large-12 columns collapse expanded" role="main">
+                      <div class="region-highlighted panel"><div data-drupal-messages-fallback class="hidden"></div></div>                    <a id="main-content"></a>
+                    <section>
+              <div>
+      
+  <section id="block-zurb-child-page-title--2" class="block-zurb-child-page-title--2 block block-core block-page-title-block text-center"  style="background: url(https://www.codepositive.com/sites/default/files/2021-01/drupal_behat_windows.png) no-repeat center; background-size: cover;">
+
+
+<div class="border">
+
+
+  
+
+
+  
+  <h1><span property="schema:name" class="field-wrapper">Getting set up with Behat 3 on Windows</span>
+</h1>
+
+
+
+
+</div>
+
+  </section>
+<section id="block-zurb-child-content--2" class="block-zurb-child-content--2 block block-system block-system-main-block">
+  
+  
+    
+
+  
+          <article id="node-30"  data-history-node-id="30" role="article" about="/articles/getting-set-behat-3-windows" typeof="schema:WebPage">
+
+  
+      <span property="schema:name" content="Getting set up with Behat 3 on Windows" class="hidden"></span>
+
+
+  
+    <div class="view-mode-full">
+    
+      <div class="field-wrapper field field--name-field-slices field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--body paragraph--view-mode--default">
+          
+            <div class="field-wrapper field field--name-field-message field--type-text-long field--label-hidden field__item"><p><strong>A step by step guide to installing Behat 3 for Windows.</strong></p>
+
+<p>Requirements:</p>
+
+<ul><li><a href="http://php.net/downloads.php" target="_blank">PHP version 5.3.3</a></li>
+	<li><a href="https://getcomposer.org/download/" target="_blank">Composer</a></li>
+</ul><p><strong>Note:</strong> if you already have Composer installed make sure to update it before moving on to the next step.</p>
+
+<h2>Step 1</h2>
+
+<p>Create a new directory for Behat 3.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre>
+C:\behat3</pre>
+
+<p>Now we need a composer.json file in that directory.</p>
+
+<p><strong>composer.json</strong></p>
+
+<pre>
+<code>{</code>
+
+<code>  </code><code>"require"</code><code>: {</code>
+
+<code>    </code><code>"drupal/drupal-extension"</code><code>: </code><code>"~3.0"</code><code>,</code>
+
+<code>    </code><code>"guzzlehttp/guzzle"</code> <code>: </code><code>"^6.0@dev"</code>
+
+<code>},</code>
+
+<code>  </code><code>"config"</code><code>: {</code>
+
+<code>    </code><code>"bin-dir"</code><code>: </code><code>"bin/"</code>
+
+<code>  </code><code>}</code>
+
+<code>}</code></pre>
+
+<h2 id="Gettingsetupwithbehat3-Step2">Step 2</h2>
+
+<p>Now we need to install Behat using <strong>Composer</strong>.</p>
+
+<p id="">In your Command Prompt run:</p>
+
+<pre>
+php composer.phar install</pre>
+
+<p><strong>Notes:</strong></p>
+
+<ul><li>If you have previously installed Behat v2.5.5 then you need to remove it from system path.</li>
+	<li>If you have Behat 2.5.5 installed you will need to run Behat using the full path.</li>
+</ul><p><strong>Example:</strong><br /><strong>Behat 3:</strong></p>
+
+<pre>
+C:\behat3\vendor\bin\behat</pre>
+
+<p><strong>Behat 2:</strong></p>
+
+<pre>
+C:\behat\bin\behat</pre>
+
+<h2>Step 3</h2>
+
+<p>In your Command Prompt....</p>
+
+<p><strong>Create a test directory:</strong></p>
+
+<pre>
+md C:\test</pre>
+
+<p><strong>Now cd to that directory: </strong></p>
+
+<pre>
+<em>cd C:\test</em></pre>
+
+<p><strong>Now run: </strong></p>
+
+<pre>
+C:\behat3\vendor\bin\behat --init</pre>
+
+<p>This will  provide us with the base file structure</p>
+
+<h2>Step 4</h2>
+
+<p>Create a behat.yml file in the test directory.</p>
+
+<p><strong>behat.yml</strong></p>
+
+<pre>
+<code>default</code><code>:</code>
+
+<code>  </code><code>suites:</code>
+
+<code>    </code><code>default</code><code>:</code>
+
+<code>      </code><code>contexts:</code>
+
+<code>        </code><code>- FeatureContext</code>
+
+<code>        </code><code>- Drupal\DrupalExtension\Context\DrupalContext</code>
+
+<code>        </code><code>- Drupal\DrupalExtension\Context\MinkContext</code>
+
+<code>        </code><code>- Drupal\DrupalExtension\Context\MessageContext</code>
+
+<code>        </code><code>- Drupal\DrupalExtension\Context\DrushContext</code>
+
+<code>  </code><code>extensions:</code>
+
+<code>    </code><code>Behat\MinkExtension:</code>
+
+<code>      </code><code>goutte: ~</code>
+
+<code>      </code><code>selenium2: ~</code>
+
+<code>      </code><code>base_url: http:</code><code>//seven.l</code>
+
+<code>    </code><code>Drupal\DrupalExtension:</code>
+
+<code>      </code><code>blackbox: ~</code></pre>
+
+<h2 id="Gettingsetupwithbehat3-Step4.1">Step 5</h2>
+
+<p><strong>Go to Command Prompt and run:</strong></p>
+
+<pre>
+C:\behat3\vendor\bin\behat --dl</pre>
+
+<p>This will print a list of Behat functions available.</p>
+
+<h2>Step 6</h2>
+
+<p>Get familiar with <strong>Behat</strong> by reading the online <a href="http://behat.org/en/latest/guides.html" target="_blank">documentation</a>, or get completely up to speed with our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4836845e-8c1e-42f4-a57b-5a8d04a603d0" href="#" title="Drupal Support &amp; Maintenance">Quality Assurance training</a> course.</p>
+</div>
+      
+      </div>
+</div>
+          </div>
+  
+  </div>
+
+  
+  
+
+</article>
+
+    
+    
+  </section>
+
+  </div>
+
+          </section>
+        </main>
+      </div>
+              <footer class="row expanded">
+                                <div id="footer-middle" class="large-12 columns expanded">
+                <div>
+    <section id="block-email--2" class="block-email--2 block block-block-content block-block-contenta0ce5286-1ce0-457a-832d-a2a1ae93f7c9">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="mailto:services@codepositive.com" title="Email Code Positive Services"><img alt="Email" src="/themes/custom/zurb_child/images/contact/email-white.png" /></a>  <span><a href="mailto:services@codepositive.com" title="Email Code Positive Services">services@codepositive.com</a></span></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-phone--2" class="block-phone--2 block block-block-content block-block-content11adf858-d3e1-437e-8ac5-efd41933f05d">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="tel:+442081330223"><img alt="Phone" src="/themes/custom/zurb_child/images/contact/mobile-white.png" /></a> <a href="tel:+442081330223"> <span>+44 (0) 20 8133 0223</span></a></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-footersocialmedia--2" class="block-footersocialmedia--2 block block-block-content block-block-content94438e23-86d9-4fc3-8037-237b86d99703">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><div><a href="http://www.facebook.com/pages/Code-Positive/83396297540" target="_blank" title="Facebook"><img alt="Facebook" src="/themes/custom/zurb_child/images/social_media/facebook_1.png" /></a></div>
+
+<div><a href="https://twitter.com/#!/codepositive" target="_blank" title="Twitter"><img alt="Twitter" src="/themes/custom/zurb_child/images/social_media/twitter_1.png" /></a></div>
+
+<div><a href="https://www.linkedin.com/company/15160028/" target="_blank" title="LinkedIn"><img alt="Linkedin" src="/themes/custom/zurb_child/images/social_media/linkedin_0.png" /></a></div>
+</div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                                <div id="footer-last" class="large-12 columns expanded">
+                <div>
+    <section id="block-footercopyright--2" class="block-footercopyright--2 block block-block-content block-block-contentc187d04b-daa3-4de7-9f27-e37f5d35cd16">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>© Copyright Code Positive Services 2021 All rights reserved.  Registered in England: 10986978</p></div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                  </footer>
+                </div>
+  </div>
+</div>
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/30","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"145c30764ef6d467862006ee9ad8f350cb43f88a98b240a651ce1a1bb01adbd3"}}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation.min.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation_init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/motion-ui.min.js?v=8.9.11"></script>
+<script src="/themes/custom/zurb_child/js/zurb_child.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/top_bar_active.js?v=8.9.11"></script>
+
+  </body>
+</html>

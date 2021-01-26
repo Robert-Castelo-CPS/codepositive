@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://www.codepositive.com/articles/automate-drupal-8-deployment-pantheon-quicksilver-scripts" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.codepositive.com/articles/automate-drupal-8-deployment-pantheon-quicksilver-scripts" />
+
+    <title>Automate Drupal 8 Deployment On Pantheon With Quicksilver Scripts | Code Positive Services</title>
+    <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/foundation-float.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/motion-ui.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/zurb_foundation.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/custom/zurb_child/css/zurb_child.css?qng7h5" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  </head>
+  <body class="lang-en section-articles path-node node--type-page">
+  <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div class="off-canvas-wrapper">
+  <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
+    <aside id="left-off-canvas-menu" class="off-canvas left-off-canvas-menu position-left" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <aside id="right-off-canvas-menu" class="off-canvas right-off-canvas-menu position-right" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <div class="off-canvas-content expanded" data-off-canvas-content>
+      
+      <header class="row collapse expanded" role="banner" aria-label="Site header">
+                  <div class="large-12 columns expanded">
+              <div>
+    <nav role="navigation" aria-labelledby="block-zurb-child-main-menu-menu" id="block-zurb-child-main-menu" class="block-zurb-child-main-menu">
+            
+  <h2 class="block-title visually-hidden" id="block-zurb-child-main-menu-menu">Main navigation</h2>
+  
+
+        
+
+    <div id="top-bar-sticky-container" data-sticky-container>
+      <div  class="sticky large-12" data-sticky data-top-anchor="top-bar-sticky-container" data-btm-anchor="9999999" data-margin-top="0" data-margin-bottom="0" data-options="stickyOn:small">
+      <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title"></div>
+      </div>
+      <nav class="top-bar" id="main-menu" role="navigation">
+        <div class="top-bar-left">
+          <a href="/">
+            <img src="/themes/custom/zurb_child/images/misc/logo.png" >
+          </a>
+
+        </div>
+        <div class="top-bar-right">
+                                <ul class="menu vertical medium-horizontal" data-disable-hover="true" data-responsive-menu="drilldown medium-dropdown">
+                                        <li>
+        <a href="/services/drupal-consulting" title="Drupal Consulting" data-drupal-link-system-path="node/7">Consulting</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-development" title="Drupal Development" data-drupal-link-system-path="node/8">Development</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-support" title="Drupal support &amp; maintenance" data-drupal-link-system-path="node/9">Support</a>
+              </li>
+                              <li>
+        <a href="/contact" title="Contact Code Positive Services" data-drupal-link-system-path="node/11">Talk To Us</a>
+              </li>
+        </ul>
+  
+                            </div>
+      </nav>
+    </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          </div>
+              </header>
+
+      <div class="row expanded">
+                              </div>
+
+      
+      
+      <div class="row collapse expanded">
+        <main id="main" class="large-12 columns collapse expanded" role="main">
+                      <div class="region-highlighted panel"><div data-drupal-messages-fallback class="hidden"></div></div>                    <a id="main-content"></a>
+                    <section>
+              <div>
+      
+  <section id="block-zurb-child-page-title" class="block-zurb-child-page-title block block-core block-page-title-block text-center"  style="background: url(https://www.codepositive.com/sites/default/files/2021-01/drupal_pantheon_automation.png) no-repeat center; background-size: cover;">
+
+
+<div class="border">
+
+
+  
+
+
+  
+  <h1><span property="schema:name" class="field-wrapper">Automate Drupal 8 Deployment On Pantheon With Quicksilver Scripts</span>
+</h1>
+
+
+
+
+</div>
+
+  </section>
+<section id="block-zurb-child-content" class="block-zurb-child-content block block-system block-system-main-block">
+  
+  
+    
+
+  
+          <article id="node-22"  data-history-node-id="22" role="article" about="/articles/automate-drupal-8-deployment-pantheon-quicksilver-scripts" typeof="schema:WebPage">
+
+  
+      <span property="schema:name" content="Automate Drupal 8 Deployment On Pantheon With Quicksilver Scripts" class="hidden"></span>
+
+
+  
+    <div class="view-mode-full">
+    
+      <div class="field-wrapper field field--name-field-slices field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--body paragraph--view-mode--default">
+          
+            <div class="field-wrapper field field--name-field-message field--type-text-long field--label-hidden field__item"><p><strong>Drupal 8 has made it a lot easier to deploy the configuration of a site from one environment to another, but there are still quite a few tasks that you often end up needing to do manually.</strong></p>
+
+<p>For example, you usually want Drupal's Google Analytics module uninstalled on Dev and Test environments, but installed on Production. Also once Google Analytics has been installed on Production, you want to set it up to use your site's Google Analytics ID and other configuration options.</p>
+
+<h2>Automating Deployments</h2>
+
+<p>Completely automating deployments obviously saves a lot of time, it makes deployments much safer as there's less chance of forgeting to make some critical change, fits in with automated testing workflows, and also saves people from having to do boring repetative work that's best handled by a machine.</p>
+
+<p>Wouldn't it be great if we could automate these tasks for each environment and have a one-click deployment? </p>
+
+<h2>Pantheon Drupal Hosting</h2>
+
+<p>We've been using <a href="https://pantheon.io/features/drupal-hosting" target="_blank" title="Pantheon Drupal hosting">Pantheon hosting</a> for some of our <a href="/services/drupal-development" title="Drupal Development">Drupal site development</a> projects for a while now and have come to quite like their built in workflows, in fact the process is so smooth that it makes having to do all the post deployment manual steps feel all the more annoying!</p>
+
+<p>Luckily the fine folks at Pantheon have also provided us with a way to script the automation of all these tasks with a feature that integrates beautifully with Drupal 8.</p>
+
+<h2>Quicksilver Platform Hooks &amp; Drupal</h2>
+
+<p><a href="https://pantheon.io/docs/quicksilver/" target="_blank" title="Quicksilver">Quicksilver</a> is a feature of Pantheon hosting that can trigger actions when a step of a workflow happens.</p>
+
+<p>Triggers can be code being deployed, code being committed via Git, the database being cloned, or cache being cleared, and each of these triggers can be specified as a <em>before</em> or <em>after</em> the workflow step happens.</p>
+
+<p>Each trigger can run one, or more, custom PHP scripts that you add to a /private directory at the top level of your project.</p>
+
+<p>Triggers, and which script they run, are specified in a <em>pantheon.yml</em> file which also sits at the top level of your project.</p>
+
+<p>Here's an example of what that looks like:</p>
+
+<pre>
+workflows:
+  clone_database:
+    after:
+      - type: webphp
+        description: Uninstall modules
+        script: private/scripts/uninstall_modules/uninstall_modules.php
+      - type: webphp
+        description: Enable modules
+        script: private/scripts/enable_modules/enable_modules.php
+  deploy:
+    after:
+      - type: webphp
+        description: Import specific configuration
+        script: private/scripts/import_config/import_config.php
+      - type: webphp
+        description: Clear cache
+        script: private/scripts/clear_cache/clear_cache.php</pre>
+
+<h2>Scripting Drupal Tasks</h2>
+
+<p>Your scripts should be coded in PHP and put into a top level /private directory, that you'll need to create, which Pantheon automatically prevents anyone from accessing through the web.</p>
+
+<p>What scripts you add and how you organise them within the /private directory is up to you, as you can set the path to scripts in the <em>pantheon.yml</em> file.</p>
+
+<p>At Code Positive we've established a few patterns as part of our <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4836845e-8c1e-42f4-a57b-5a8d04a603d0" href="#" title="Drupal support and maintenance">Drupal support and maintenance</a> work which I'd like to share with you....</p>
+
+<h3>Organising Quicksilver Scripts</h3>
+
+<p>Following the Drupal pattern we treat each script as it's own self contained module, with a standard set of files and directories:</p>
+
+<ul><li>README file for documentation</li>
+	<li>PHP file that contains all the code for what the script does</li>
+	<li>Config directory that has a sub-directory for each environment</li>
+	<li>Settings files that can be added to the sub-directory of each environment</li>
+</ul><p>This pattern enables us to provide specific settings for each environment and keep the logic of the script completely seperate.</p>
+
+<p>We're able to use PANTHEON_ENVIRONMENT in our code to check which environment is currently being acted on and load the settings file for that environment:</p>
+
+<pre>
+if (defined('PANTHEON_ENVIRONMENT')) {
+
+  switch(PANTHEON_ENVIRONMENT) {
+    case 'live':
+    case 'test':
+    case 'dev':
+      $config_file = dirname(__FILE__) . '/config/' . PANTHEON_ENVIRONMENT . '/config.inc';
+      break;
+    default:
+      // Multidev instances.
+      $config_file = dirname(__FILE__) . '/config/multidev/config.inc';
+      break;
+  }
+}</pre>
+
+<h3>Drush</h3>
+
+<p><span>Drush is a command line interface for Drupal that provides a huge number of commands for a wide range of Drupal tasks. </span></p>
+
+<p><span>We can use Drush in our scripts to do most of the work by using the </span>passthru() function to set Drush commands.</p>
+
+<p>For example, to enable specific modules:</p>
+
+<pre>
+passthru("drush pm-enable -y $module");</pre>
+
+<p>If we need to use a Drush command to get data from Drupal use the shell_exec() function.</p>
+
+<p>For example, to get a list of enabled modules:</p>
+
+<pre>
+$module_list = shell_exec("drush pm-list --type=module --status=enabled --pipe 2&gt;&amp;1");
+$enabled_modules = explode("\n", $module_list);</pre>
+
+<h3>Debugging</h3>
+
+<p>Use <a href="https://pantheon.io/docs/quicksilver/#debugging-via-terminus" target="_blank" title="Debugging via Terminus">Terminus</a>, Pantheon's command line interface, to debug scripts.</p>
+
+<p>Once you're logged into your site on Terminus you can see debugging messages printed out by your scripts.</p>
+
+<p>For example:</p>
+
+<pre>
+echo('Configuration imported.' . "\n");</pre>
+
+<h2>Code Positive Quicksilver Scripts For Drupal Deployment</h2>
+
+<p>Quicksilver scripts for automating Drupal 8 deployments on Pantheon are fairly quick and easy to write, but even better than that, you may not need to write them at all!</p>
+
+<p>We're making available the scripts we use at Code Positive, which cover most of the tasks we used to do manually.</p>
+
+<p>These scripts are ready to be used on any site, all you need to do is read the instructions in the README file for each script and set them up the way you want them to work on each environment.</p>
+
+<p>Here's what they do....</p>
+
+<h3>Enable Modules</h3>
+
+<p>This script enables whatever Drupal modules you specify to be enabled.</p>
+
+<p>Make sure you have the modules in your code base, and then list their machine names in the config.inc file for the environment they should be enabled on.</p>
+
+<p>For example create a config.inc file and add it to .../enable_modules/config/dev/</p>
+
+<pre>
+&lt;?php
+
+$config = array(
+   'devel',
+   'kint',
+   'update'
+);</pre>
+
+<p>If a module is already enabled the enable command is skipped for that module and the script tries to enable the next module on the list.</p>
+
+<h3>Uninstall Modules</h3>
+
+<p>This script uninstalls whatever Drupal modules you specify to be uninstalled.</p>
+
+<p>Configuration is the same as for the Enable Modules script.</p>
+
+<p>Make sure that the module(s) are still in the code base before uninstalling as they contain uninstall steps for removing themselves cleanly from the database.</p>
+
+<h3>Import Config</h3>
+
+<p>This script imports specific configuration into Drupal, such as the settings for the Google Analytics module.</p>
+
+<p>Use Drupal to export specific settings as individual files and add the files to the config directory of the environment it should run on.</p>
+
+<p>The settings files will be auto-detected so this is both incredibly powerful and incredibly easy to use.</p>
+
+<h3>Clear Cache</h3>
+
+<p>This script clears the Drupal cache.</p>
+
+<p>To use this create a config.inc file and add it to the environment you want to clear cache on, for example: .../enable_modules/config/dev/config.inc</p>
+
+<pre>
+  &lt;?php
+
+  $clear_cache = TRUE;</pre>
+
+<p>If you're interested in writting your own scripts this is the best of these script to look at first as it's a very simple script built around the Drush command for clearing cache.</p>
+
+<h2>Get The Scripts</h2>
+
+<p>All of the above Drupal deployment scripts can be downloaded from our <a href="https://bitbucket.org/codepositive/pantheon-scripts/overview" target="_blank" title="Drupal deployment scripts">repository</a>.</p>
+
+<p>Let us know in the comments below if you find the scripts useful, and if there's any improvements you can suggest.</p>
+</div>
+      
+      </div>
+</div>
+          </div>
+  
+  </div>
+
+  
+  
+
+</article>
+
+    
+    
+  </section>
+
+  </div>
+
+          </section>
+        </main>
+      </div>
+              <footer class="row expanded">
+                                <div id="footer-middle" class="large-12 columns expanded">
+                <div>
+    <section id="block-email" class="block-email block block-block-content block-block-contenta0ce5286-1ce0-457a-832d-a2a1ae93f7c9">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="mailto:services@codepositive.com" title="Email Code Positive Services"><img alt="Email" src="/themes/custom/zurb_child/images/contact/email-white.png" /></a>  <span><a href="mailto:services@codepositive.com" title="Email Code Positive Services">services@codepositive.com</a></span></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-phone" class="block-phone block block-block-content block-block-content11adf858-d3e1-437e-8ac5-efd41933f05d">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="tel:+442081330223"><img alt="Phone" src="/themes/custom/zurb_child/images/contact/mobile-white.png" /></a> <a href="tel:+442081330223"> <span>+44 (0) 20 8133 0223</span></a></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-footersocialmedia" class="block-footersocialmedia block block-block-content block-block-content94438e23-86d9-4fc3-8037-237b86d99703">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><div><a href="http://www.facebook.com/pages/Code-Positive/83396297540" target="_blank" title="Facebook"><img alt="Facebook" src="/themes/custom/zurb_child/images/social_media/facebook_1.png" /></a></div>
+
+<div><a href="https://twitter.com/#!/codepositive" target="_blank" title="Twitter"><img alt="Twitter" src="/themes/custom/zurb_child/images/social_media/twitter_1.png" /></a></div>
+
+<div><a href="https://www.linkedin.com/company/15160028/" target="_blank" title="LinkedIn"><img alt="Linkedin" src="/themes/custom/zurb_child/images/social_media/linkedin_0.png" /></a></div>
+</div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                                <div id="footer-last" class="large-12 columns expanded">
+                <div>
+    <section id="block-footercopyright" class="block-footercopyright block block-block-content block-block-contentc187d04b-daa3-4de7-9f27-e37f5d35cd16">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>© Copyright Code Positive Services 2021 All rights reserved.  Registered in England: 10986978</p></div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                  </footer>
+                </div>
+  </div>
+</div>
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/22","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"145c30764ef6d467862006ee9ad8f350cb43f88a98b240a651ce1a1bb01adbd3"}}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation.min.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation_init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/motion-ui.min.js?v=8.9.11"></script>
+<script src="/themes/custom/zurb_child/js/zurb_child.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/top_bar_active.js?v=8.9.11"></script>
+
+  </body>
+</html>

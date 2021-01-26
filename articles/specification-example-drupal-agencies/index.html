@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://www.codepositive.com/articles/specification-example-drupal-agencies" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.codepositive.com/articles/specification-example-drupal-agencies" />
+
+    <title>Specification By Example For Drupal Agencies | Code Positive Services</title>
+    <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/foundation-float.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/motion-ui.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/zurb_foundation.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/custom/zurb_child/css/zurb_child.css?qng7h5" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  </head>
+  <body class="lang-en section-articles path-node node--type-page">
+  <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div class="off-canvas-wrapper">
+  <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
+    <aside id="left-off-canvas-menu" class="off-canvas left-off-canvas-menu position-left" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <aside id="right-off-canvas-menu" class="off-canvas right-off-canvas-menu position-right" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <div class="off-canvas-content expanded" data-off-canvas-content>
+      
+      <header class="row collapse expanded" role="banner" aria-label="Site header">
+                  <div class="large-12 columns expanded">
+              <div>
+    <nav role="navigation" aria-labelledby="block-zurb-child-main-menu-menu" id="block-zurb-child-main-menu" class="block-zurb-child-main-menu">
+            
+  <h2 class="block-title visually-hidden" id="block-zurb-child-main-menu-menu">Main navigation</h2>
+  
+
+        
+
+    <div id="top-bar-sticky-container" data-sticky-container>
+      <div  class="sticky large-12" data-sticky data-top-anchor="top-bar-sticky-container" data-btm-anchor="9999999" data-margin-top="0" data-margin-bottom="0" data-options="stickyOn:small">
+      <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title"></div>
+      </div>
+      <nav class="top-bar" id="main-menu" role="navigation">
+        <div class="top-bar-left">
+          <a href="/">
+            <img src="/themes/custom/zurb_child/images/misc/logo.png" >
+          </a>
+
+        </div>
+        <div class="top-bar-right">
+                                <ul class="menu vertical medium-horizontal" data-disable-hover="true" data-responsive-menu="drilldown medium-dropdown">
+                                        <li>
+        <a href="/services/drupal-consulting" title="Drupal Consulting" data-drupal-link-system-path="node/7">Consulting</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-development" title="Drupal Development" data-drupal-link-system-path="node/8">Development</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-support" title="Drupal support &amp; maintenance" data-drupal-link-system-path="node/9">Support</a>
+              </li>
+                              <li>
+        <a href="/contact" title="Contact Code Positive Services" data-drupal-link-system-path="node/11">Talk To Us</a>
+              </li>
+        </ul>
+  
+                            </div>
+      </nav>
+    </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          </div>
+              </header>
+
+      <div class="row expanded">
+                              </div>
+
+      
+      
+      <div class="row collapse expanded">
+        <main id="main" class="large-12 columns collapse expanded" role="main">
+                      <div class="region-highlighted panel"><div data-drupal-messages-fallback class="hidden"></div></div>                    <a id="main-content"></a>
+                    <section>
+              <div>
+      
+  <section id="block-zurb-child-page-title" class="block-zurb-child-page-title block block-core block-page-title-block text-center"  style="background: url(https://www.codepositive.com/sites/default/files/2021-01/specification_by_example.png) no-repeat center; background-size: cover;">
+
+
+<div class="border">
+
+
+  
+
+
+  
+  <h1><span property="schema:name" class="field-wrapper">Specification By Example For Drupal Agencies</span>
+</h1>
+
+
+
+
+</div>
+
+  </section>
+<section id="block-zurb-child-content" class="block-zurb-child-content block block-system block-system-main-block">
+  
+  
+    
+
+  
+          <article id="node-29"  data-history-node-id="29" role="article" about="/articles/specification-example-drupal-agencies" typeof="schema:WebPage">
+
+  
+      <span property="schema:name" content="Specification By Example For Drupal Agencies" class="hidden"></span>
+
+
+  
+    <div class="view-mode-full">
+    
+      <div class="field-wrapper field field--name-field-slices field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--body paragraph--view-mode--default">
+          
+            <div class="field-wrapper field field--name-field-message field--type-text-long field--label-hidden field__item"><p><strong>Bridging the communications gap between clients and developers with Specification By Example.</strong></p>
+
+<h2>Acceptance criteria</h2>
+
+<p>Acceptance criteria are the <strong>conditions</strong> that a software product must satisfy to fulfil its intended use - from that definition it's clear that acceptance criteria are critically important!</p>
+
+<p>If the client and the developer have very different interpretations of the acceptance criteria there's a potential to produce site features that technically do pass the requirements defined in the acceptance criteria, but are not actually what the client wanted.</p>
+
+<p>So how do we make sure we don't run into this problem? We produce acceptance criteria in the form of 'Specification by example'.</p>
+
+<h2>Specification by example</h2>
+
+<p>So before we get into defining a specification by use of examples, we should quickly look at what type of specification is defined with Acceptance Criteria and what Specification By Example defines.</p>
+
+<p>Acceptance Criteria produces a <strong>requirement spec</strong> which is basically a description of requirements/conditions that must be satisfied.</p>
+
+<p>Specification By Example produces a <strong>functional spec </strong>that is very similar to a <strong>requirement spec</strong>, but also includes examples that show the different ways in which the feature should behave when given specific values.</p>
+
+<p>The value of Specification By Example is that it's a collaborative process that captures the requirements of a software project using realistic examples instead of abstract statements, in a format that's both easy to read and to convert into automated Behat test features.</p>
+
+<p>A specification should focus on a single feature, with different aspects of the feature defined as scenarios of that feature. By focusing on a single feature your spec not only becomes easier to understand but also re-useable.</p>
+
+<p>If you find yourself applying the same feature to multiple projects it's a lot easier if you have a clear spec for that site feature which has already been tried and tested.</p>
+
+<p>Now we can look at what the foundations are for defining a Specification By Example.</p>
+
+<h2>Specification steps not test script steps</h2>
+
+<p>First things first, you need to understand that a specification and a test script are two completely different types of an automated test.</p>
+
+<p>A test script is simply the journey a user must go through in order to achieve the goal of your software's feature.</p>
+
+<p>If you were to try to automate this journey with a Behat test feature, it would be both simple and quick to automate, but would also be very fragile in terms of maintenance, and in general not actually useful as a spec or documentation, as it is just a test.</p>
+
+<p>This is due to the fact it focuses on a user journey which is directly related to how the feature was implemented. Therefore it is just describing how the site feature should work.</p>
+
+<p>We want to avoid this at all costs!</p>
+
+<p>We never want to focus on how a site feature <strong>should work</strong> as it is too closely intertwined with how the feature was implemented.<strong> </strong>Your specification should not in anyway describe how a site feature was implemented but rather <strong>what it should do</strong> regardless of how its implemented.</p>
+
+<p>Here are two examples of a Behat test feature:</p>
+
+<p><strong>Example 1</strong></p>
+
+<p><em>Feature: Free delivery</em></p>
+
+<p><em>Given my shopping cart has a total of</em></p>
+
+<p><em>Then the delivery fee should be</em></p>
+
+<p><em>Examples:</em></p>
+
+<p><em>|value|type|</em></p>
+
+<p><em>|"£5"|"standard"|</em></p>
+
+<p><em>|"£9.99"|"standard"|</em></p>
+
+<p><em>|"£10"|"free"|</em></p>
+
+<p><em>|"£15"|"free"|</em></p>
+
+<p><strong>Example 2</strong></p>
+
+<p><em>Feature: Free delivery</em></p>
+
+<p><em>Given I search for "cheese"</em></p>
+
+<p><em>And I add "big block of cheese" to my basket</em></p>
+
+<p><em>And I add "small block of cheese" to my basket</em></p>
+
+<p><em>When I click "checkout"</em></p>
+
+<p><em>Then I should see my delivery fee is "free"</em></p>
+
+<p>Both of these two features are testing the same site feature. So hopefully without any further information you can tell straight away that the first one is a specification and the other is a test script.</p>
+
+<p>That's because the second test is a user journey, it lists the exact steps it takes to get free delivery. It uses specific values which again are directly related to how the feature was implemented.</p>
+
+<p>So lets look at what details we actually get from just reading the first feature.</p>
+
+<p>It doesn't mention any specific items that must be purchased just that the value must be higher than a certain number to be eligible for free delivery. From the examples listed we can work out than any basket with a total of £10 or more qualifies for free delivery. Anything below £10 will have a standard delivery fee.</p>
+
+<p>This is specification by example. The Steps on their own explain what the feature <strong>should do</strong> rather than <strong>how it works.</strong> The examples provide real values that can be tested with an expected outcome.</p>
+
+<p>This provides a clear spec for what a feature should do without specifying anything that implies a certain route for implementation, leaving the developer to make the decision on how to implement the feature in the most efficient and effective manor.</p>
+
+<p>Which is exactly what we want. A mutual understanding between all stake holders but with no restriction to the solution chosen by the developer.</p>
+
+<h2>What are useful examples</h2>
+
+<p>There are many ways of extracting the right examples using various discussion techniques, I won't go into detail about those in this article, but I will list the qualities of good examples.</p>
+
+<p><strong>Easy to understand</strong></p>
+
+<p>This doesn't really need explaining but the key point is that these examples should serve as documentation and should not require any separate information.</p>
+
+<p><strong>Realistic</strong></p>
+
+<p>Examples have to be realistic, the main reason being that it will help you spot any inconsistencies before implementing a feature.</p>
+
+<p><strong>Precise</strong></p>
+
+<p>By being precise our examples help us avoid any <span>uncertainty between stakeholders</span>.</p>
+
+<p><strong>Complete</strong></p>
+
+<p>Make sure your examples include all edge cases, if we can define these all at the start then our technical solution can be built with them in mind. We never want to discover these edge cases midway through building as it can halt progress and potentially cause the solution to be completely re-designed.</p>
+
+<p>Make sure to not over specify examples as it can potentially confuse the exact criteria of a specification or potentially add unnecessary instances of a test which will only add to the time it takes to run a whole test suite.</p>
+
+<p>This may not seem like an issue but when you get to the point when your full test suite takes roughly 2 hours to complete, removing any examples that are not needed can save you a lot of time!</p>
+
+<h2>Show and keep quiet</h2>
+
+<p>Once you feel your examples have all of the above qualities and you've produced a clean specification by example, we recommend trying a process called <strong>Show and keep quiet.</strong></p>
+
+<p>The clue is in the heading - basically you should be able to hand your spec to a stakeholder, and without telling them anything, the spec should make enough sense by itself for them to understand what the specified site feature should do without needing to ask questions.</p>
+
+<p>It may take a few versions of the spec to get it to the point that it is self explanatory but once you have achieved that, you will have clear documentation that you know doesn't require any attached information.</p>
+
+<h2>For more information on this topic</h2>
+
+<p>We recommend purchasing this <a href="https://www.amazon.co.uk/Specification-Example-Successful-Deliver-Software/dp/1617290084" target="_blank">book</a>. Chapter 8 is especially useful.</p>
+
+<p>Also why not take part in one of our<a data-entity-type="node" data-entity-uuid="12c2f7a2-4f5c-47a0-8bb0-32a62e9cd6e0" href="#"> Quality assurance training courses</a> which cover this topic in more detail.</p>
+</div>
+      
+      </div>
+</div>
+          </div>
+  
+  </div>
+
+  
+  
+
+</article>
+
+    
+    
+  </section>
+
+  </div>
+
+          </section>
+        </main>
+      </div>
+              <footer class="row expanded">
+                                <div id="footer-middle" class="large-12 columns expanded">
+                <div>
+    <section id="block-email" class="block-email block block-block-content block-block-contenta0ce5286-1ce0-457a-832d-a2a1ae93f7c9">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="mailto:services@codepositive.com" title="Email Code Positive Services"><img alt="Email" src="/themes/custom/zurb_child/images/contact/email-white.png" /></a>  <span><a href="mailto:services@codepositive.com" title="Email Code Positive Services">services@codepositive.com</a></span></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-phone" class="block-phone block block-block-content block-block-content11adf858-d3e1-437e-8ac5-efd41933f05d">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="tel:+442081330223"><img alt="Phone" src="/themes/custom/zurb_child/images/contact/mobile-white.png" /></a> <a href="tel:+442081330223"> <span>+44 (0) 20 8133 0223</span></a></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-footersocialmedia" class="block-footersocialmedia block block-block-content block-block-content94438e23-86d9-4fc3-8037-237b86d99703">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><div><a href="http://www.facebook.com/pages/Code-Positive/83396297540" target="_blank" title="Facebook"><img alt="Facebook" src="/themes/custom/zurb_child/images/social_media/facebook_1.png" /></a></div>
+
+<div><a href="https://twitter.com/#!/codepositive" target="_blank" title="Twitter"><img alt="Twitter" src="/themes/custom/zurb_child/images/social_media/twitter_1.png" /></a></div>
+
+<div><a href="https://www.linkedin.com/company/15160028/" target="_blank" title="LinkedIn"><img alt="Linkedin" src="/themes/custom/zurb_child/images/social_media/linkedin_0.png" /></a></div>
+</div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                                <div id="footer-last" class="large-12 columns expanded">
+                <div>
+    <section id="block-footercopyright" class="block-footercopyright block block-block-content block-block-contentc187d04b-daa3-4de7-9f27-e37f5d35cd16">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>© Copyright Code Positive Services 2021 All rights reserved.  Registered in England: 10986978</p></div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                  </footer>
+                </div>
+  </div>
+</div>
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/29","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"145c30764ef6d467862006ee9ad8f350cb43f88a98b240a651ce1a1bb01adbd3"}}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation.min.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation_init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/motion-ui.min.js?v=8.9.11"></script>
+<script src="/themes/custom/zurb_child/js/zurb_child.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/top_bar_active.js?v=8.9.11"></script>
+
+  </body>
+</html>

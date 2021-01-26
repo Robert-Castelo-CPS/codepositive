@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+  <head>
+    <meta charset="utf-8" />
+<link rel="canonical" href="https://www.codepositive.com/articles/configuring-amp-drupal-8" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="ImageToolbar" content="false" />
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.codepositive.com/articles/configuring-amp-drupal-8" />
+
+    <title>Configuring AMP for Drupal 8 | Code Positive Services</title>
+    <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/foundation-float.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/motion-ui.min.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/contrib/zurb_foundation/css/zurb_foundation.css?qng7h5" />
+<link rel="stylesheet" media="all" href="/themes/custom/zurb_child/css/zurb_child.css?qng7h5" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+
+  </head>
+  <body class="lang-en section-articles path-node node--type-page">
+  <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div class="off-canvas-wrapper">
+  <div class="inner-wrap off-canvas-wrapper-inner" id="inner-wrap" data-off-canvas-wrapper>
+    <aside id="left-off-canvas-menu" class="off-canvas left-off-canvas-menu position-left" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <aside id="right-off-canvas-menu" class="off-canvas right-off-canvas-menu position-right" role="complementary" data-off-canvas>
+      
+    </aside>
+
+    <div class="off-canvas-content expanded" data-off-canvas-content>
+      
+      <header class="row collapse expanded" role="banner" aria-label="Site header">
+                  <div class="large-12 columns expanded">
+              <div>
+    <nav role="navigation" aria-labelledby="block-zurb-child-main-menu--2-menu" id="block-zurb-child-main-menu--2" class="block-zurb-child-main-menu--2">
+            
+  <h2 class="block-title visually-hidden" id="block-zurb-child-main-menu--2-menu">Main navigation</h2>
+  
+
+        
+
+    <div id="top-bar-sticky-container" data-sticky-container>
+      <div  class="sticky large-12" data-sticky data-top-anchor="top-bar-sticky-container" data-btm-anchor="9999999" data-margin-top="0" data-margin-bottom="0" data-options="stickyOn:small">
+      <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title"></div>
+      </div>
+      <nav class="top-bar" id="main-menu" role="navigation">
+        <div class="top-bar-left">
+          <a href="/">
+            <img src="/themes/custom/zurb_child/images/misc/logo.png" >
+          </a>
+
+        </div>
+        <div class="top-bar-right">
+                                <ul class="menu vertical medium-horizontal" data-disable-hover="true" data-responsive-menu="drilldown medium-dropdown">
+                                        <li>
+        <a href="/services/drupal-consulting" title="Drupal Consulting" data-drupal-link-system-path="node/7">Consulting</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-development" title="Drupal Development" data-drupal-link-system-path="node/8">Development</a>
+              </li>
+                              <li>
+        <a href="/services/drupal-support" title="Drupal support &amp; maintenance" data-drupal-link-system-path="node/9">Support</a>
+              </li>
+                              <li>
+        <a href="/contact" title="Contact Code Positive Services" data-drupal-link-system-path="node/11">Talk To Us</a>
+              </li>
+        </ul>
+  
+                            </div>
+      </nav>
+    </div>
+    </div>
+  
+
+  </nav>
+
+  </div>
+
+          </div>
+              </header>
+
+      <div class="row expanded">
+                              </div>
+
+      
+      
+      <div class="row collapse expanded">
+        <main id="main" class="large-12 columns collapse expanded" role="main">
+                      <div class="region-highlighted panel"><div data-drupal-messages-fallback class="hidden"></div></div>                    <a id="main-content"></a>
+                    <section>
+              <div>
+      
+  <section id="block-zurb-child-page-title--2" class="block-zurb-child-page-title--2 block block-core block-page-title-block text-center"  style="background: url(https://www.codepositive.com/sites/default/files/2021-01/drupal_amp_configuration_0.png) no-repeat center; background-size: cover;">
+
+
+<div class="border">
+
+
+  
+
+
+  
+  <h1><span property="schema:name" class="field-wrapper">Configuring AMP for Drupal 8</span>
+</h1>
+
+
+
+
+</div>
+
+  </section>
+<section id="block-zurb-child-content--2" class="block-zurb-child-content--2 block block-system block-system-main-block">
+  
+  
+    
+
+  
+          <article id="node-33"  data-history-node-id="33" role="article" about="/articles/configuring-amp-drupal-8" typeof="schema:WebPage">
+
+  
+      <span property="schema:name" content="Configuring AMP for Drupal 8" class="hidden"></span>
+
+
+  
+    <div class="view-mode-full">
+    
+      <div class="field-wrapper field field--name-field-slices field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">  <div class="paragraph paragraph--type--body paragraph--view-mode--default">
+          
+            <div class="field-wrapper field field--name-field-message field--type-text-long field--label-hidden field__item"><p>AMP is a new technology from Google that's designed to make browsing on a mobile feel as responsive as using any other app.</p>
+
+<p>AMP achieves incredibly fast loading of web pages by prioritising content and pre-calculating layouts, giving images more time to load without the pain of changing the page layout once everything has finished loading.</p>
+
+<p>That means visitors are able to start reading your content instantly without having to worry about their screen suddenly skipping back to the top of the page due to the images loading in late.</p>
+
+<p>To find out more about what exactly AMP is then take a look at my article <a data-entity-type="node" data-entity-uuid="c98d3b8c-c61a-4cb4-84a1-01f21190badc" href="#" target="_blank">AMP for Drupal 8</a>.</p>
+
+<h2>Technical details</h2>
+
+<p>To get AMP working on Drupal 8 the first step is to install the <a href="https://www.drupal.org/project/amp" target="_blank">AMP module</a> along with the <a href="https://www.drupal.org/project/amptheme" target="_blank">AMP theme</a>.</p>
+
+<p>Once you have installed the module and enabled the theme, you will need to copy the ExAMPle Subtheme to create a new theme and rename it 'amp' or whatever is relevant to you.</p>
+
+<p>The main AMP theme should be used as a base theme which you are extending with the new 'amp' sub theme, the reason for setting it up in this way is that you want to be able to update the main AMP theme at anytime without the complications of having to removing your updates from it.</p>
+
+<p>So its best to keep your updates in a sub theme.</p>
+
+<p>Now before you start any theming work you'll first need to configure the AMP module, your content types and any blocks that use views.</p>
+
+<h2>Configure AMP module</h2>
+
+<p>Path: <em>/admin/config/content/amp</em></p>
+
+<p><img alt="AMP theme" data-entity-type="file" data-entity-uuid="1dddad57-f788-4ca6-aa9a-202f7d97e730" src="/sites/default/files/inline-images/theme.png" /></p>
+
+<p>Make sure to select your 'amp' sub theme as your AMP theme.</p>
+
+<p>Your settings should be similar to ours, you may want to change a few but the most important one is the <strong><em>Power User:</em> Run the whole HTML page through the AMP library</strong>. This will make sure to convert any images or other html elements that have been attached to a page by CKeditor into the relevant AMP HTML version of that element.</p>
+
+<p><img alt="AMP checklist" data-entity-type="file" data-entity-uuid="a5876ad6-3190-427e-9738-62a761d06536" src="/sites/default/files/inline-images/check.png" /></p>
+
+<h2>Configure AMP display mode for content types</h2>
+
+<p>As I mentioned in <a data-entity-type="node" data-entity-uuid="c98d3b8c-c61a-4cb4-84a1-01f21190badc" href="#" title="AMP for Drupal 8"><span>AMP for Drupal 8</span></a> you can apply AMP to any/all content types, however you may wish to prioritise the content type/s you share most frequently on social media.</p>
+
+<p>To add the AMP display mode to your content types you can either edit the content type directly or do it through the main configuration page (<em>/admin/config/content/amp</em>) under the AMP Status by Content Type settings - simply click enable followed by configure.</p>
+
+<p>I prefer to edit the content type directly and add the display mode how I would normally, you will then need to prioritise what fields should appear on the AMP display mode. The most important step is to make sure you change the format to the relevant AMP version. The following example is for a text field:</p>
+
+<p><img alt="AMP format" data-entity-type="file" data-entity-uuid="ff317c65-98d6-42b8-aff3-821bd1ac0920" src="/sites/default/files/inline-images/format.png" /></p>
+
+<h2>Configure AMP version of view blocks</h2>
+
+<p>Now that you have configured your fields correctly you will need to duplicate any Views blocks and again make sure they are using the correct format. I recommend first looking at what content the Views block is adding to the page and deciding if it is relevant for the AMP version of that page.</p>
+
+<p>Once you have done this simply duplicate the View and change the fields to use the relevant format, just as we did for the content types display mode.</p>
+
+<p>One key thing to remember to do when going through this process is to change the way links are added to the fields in the view. We don't want visitors to be using AMP versions of our pages and to then click a link which will direct them to non-AMP pages on your site. To do this simply add the path as a hidden field on the View so that we can use it as a token when we rewrite results to output the field as a custom link.</p>
+
+<p>At Code Positive we use the query <em>?amp</em> to convert any of our pages to their AMP version. So we use the path token and simply add the query to the end. This means any links followed will still produce the AMP version.</p>
+
+<p><img alt="AMP link" data-entity-type="file" data-entity-uuid="a9c398a2-ce36-4f5a-8732-4aed6b86c5d6" src="/sites/default/files/inline-images/link.png" /></p>
+
+<h2>Configure AMP block layout</h2>
+
+<p>Once you have created your new View blocks, you can now add them to the block structure for the 'amp' sub theme. Your path should be <em>/admin/structure/block/list/'amp'</em>. Simply add the blocks and sort the order you wish for them to appear in.</p>
+
+<h2>Add your CSS to your sub theme</h2>
+
+<p>Now that all your content has been finalised on your AMP pages you can go ahead and style the page.</p>
+
+<h2>Configure AMP metadata</h2>
+
+<p>Path: <em>/admin/config/content/amp/metadata</em></p>
+
+<p>Last step before you go live is to make sure that you add the relevant metadata to your AMP page. Here's ours as a reference:</p>
+
+<p><img alt="AMP metadata" data-entity-type="file" data-entity-uuid="5456aa27-7945-4a1a-91c9-ffe37fc1e0c6" src="/sites/default/files/inline-images/meta_0.png" /></p>
+
+<h2>Testing your AMP configuration:</h2>
+
+<p>For testing while you are configuring AMP this <a href="https://validator.ampproject.org" target="_blank">development testing tool</a> is what you need to make sure pages validate.</p>
+
+<p>For testing once you have pushed your changes to the production site then this <a href="https://search.google.com/search-console/amp" target="_blank">live testing tool</a> lets you check that your pages pass Google's validation and will be added to the Google AMP Cache.</p>
+
+<p>Troubleshooting:</p>
+
+<h2>New Relic</h2>
+
+<p>The New Relic monitoring service can invalidate AMP pages because it adds it's own JavaScript into pages.</p>
+
+<p>To dissable New Relic on AMP pages add this code to the file <em>/sites/default/settings.php</em></p>
+
+<pre>
+<code><span>/** </span>
+<span>* Customise New Relic. </span>
+<span>*/
+if </span>(<span>extension_loaded</span>(<span>'newrelic'</span>)) { </code>
+<code><span>  // Add AMP page identifying logic here that would, for example, </span><span> </span></code>
+<code><span>  // set variable $amp to TRUE or FALSE. If $amp is true, disable new relic. </span><span> </span>
+  $amp = <span>isset</span>($_GET[<span>'amp'</span>])<span>; </span> <span> </span></code>
+<code><span>  
+  if </span>($amp) {
+<span>    newrelic_disable_autorum </span>(<span>FALSE</span>)<span>; </span><span> </span>
+<span>    newrelic_ignore_transaction</span>()<span>; </span>
+  }
+}</code></pre>
+
+<h2>Inline Images</h2>
+
+<p>In order to get <strong><em>Power User:</em> Run the whole HTML page through the AMP library</strong> to work you may need to do the following steps:</p>
+
+<h3>Add missing file to Git</h3>
+
+<p>Depending on how you added the AMP module you may run into issues with some dependency files not being deployable.</p>
+
+<p>To fix that remove .gitignore files from the Vendor/Saberworm directory and commit this file to Git:</p>
+
+<p><em>vendor/sabberworm/php-css-parser/lib/Sabberworm/CSS/Settings.php</em></p>
+
+<h3>Correct path to images</h3>
+
+<p>If your site is hosted on Pantheon you may need to adjust the path to files.</p>
+
+<p>Add this code to <em>sites/default/settings.php</em></p>
+
+<pre>
+<code>$_SERVER<span>['SERVER_NAME']</span> = $_SERVER<span>['HTTP_HOST']</span>;
+unset($_SERVER<span>['SERVER_PORT']</span>);</code></pre>
+
+<h2>Google Analytics</h2>
+
+<p>The order in which Javascript is added to AMP pages is important.</p>
+
+<p>Copy:</p>
+
+<p><em>themes/amptheme/templates/layout/html.html.twig</em></p>
+
+<p>To:</p>
+
+<p><em>themes/amp/templates/layout/html.html.twig</em> (assuming 'amp' is name of the AMP subtheme)</p>
+
+<p>In the html.html.twig file you just copied remove this line:</p>
+
+<p><code><span>&lt;</span><span>script </span><span>async src=</span><span>"https://cdn.ampproject.org/v0.js"</span><span>&gt;&lt;/</span><span>script</span><span>&gt;</span></code></p>
+
+<p>If you're having trouble or would like some help getting started<span> <a href="/contact">contact us</a> and we'd be happy to help</span>.</p>
+
+<p> </p>
+</div>
+      
+      </div>
+</div>
+          </div>
+  
+  </div>
+
+  
+  
+
+</article>
+
+    
+    
+  </section>
+
+  </div>
+
+          </section>
+        </main>
+      </div>
+              <footer class="row expanded">
+                                <div id="footer-middle" class="large-12 columns expanded">
+                <div>
+    <section id="block-email--2" class="block-email--2 block block-block-content block-block-contenta0ce5286-1ce0-457a-832d-a2a1ae93f7c9">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="mailto:services@codepositive.com" title="Email Code Positive Services"><img alt="Email" src="/themes/custom/zurb_child/images/contact/email-white.png" /></a>  <span><a href="mailto:services@codepositive.com" title="Email Code Positive Services">services@codepositive.com</a></span></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-phone--2" class="block-phone--2 block block-block-content block-block-content11adf858-d3e1-437e-8ac5-efd41933f05d">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="tel:+442081330223"><img alt="Phone" src="/themes/custom/zurb_child/images/contact/mobile-white.png" /></a> <a href="tel:+442081330223"> <span>+44 (0) 20 8133 0223</span></a></p>
+</div>
+      
+    
+    
+  </section>
+<section id="block-footersocialmedia--2" class="block-footersocialmedia--2 block block-block-content block-block-content94438e23-86d9-4fc3-8037-237b86d99703">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><div><a href="http://www.facebook.com/pages/Code-Positive/83396297540" target="_blank" title="Facebook"><img alt="Facebook" src="/themes/custom/zurb_child/images/social_media/facebook_1.png" /></a></div>
+
+<div><a href="https://twitter.com/#!/codepositive" target="_blank" title="Twitter"><img alt="Twitter" src="/themes/custom/zurb_child/images/social_media/twitter_1.png" /></a></div>
+
+<div><a href="https://www.linkedin.com/company/15160028/" target="_blank" title="LinkedIn"><img alt="Linkedin" src="/themes/custom/zurb_child/images/social_media/linkedin_0.png" /></a></div>
+</div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                                <div id="footer-last" class="large-12 columns expanded">
+                <div>
+    <section id="block-footercopyright--2" class="block-footercopyright--2 block block-block-content block-block-contentc187d04b-daa3-4de7-9f27-e37f5d35cd16">
+  
+  
+    
+
+  
+          
+            <div class="field-wrapper body field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>© Copyright Code Positive Services 2021 All rights reserved.  Registered in England: 10986978</p></div>
+      
+    
+    
+  </section>
+
+  </div>
+
+            </div>
+                  </footer>
+                </div>
+  </div>
+</div>
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/33","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"145c30764ef6d467862006ee9ad8f350cb43f88a98b240a651ce1a1bb01adbd3"}}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.js?v=8.9.11"></script>
+<script src="/core/misc/drupal.init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation.min.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/foundation_init.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/motion-ui.min.js?v=8.9.11"></script>
+<script src="/themes/custom/zurb_child/js/zurb_child.js?v=8.9.11"></script>
+<script src="/themes/contrib/zurb_foundation/js/top_bar_active.js?v=8.9.11"></script>
+
+  </body>
+</html>
